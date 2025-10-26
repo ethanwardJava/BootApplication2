@@ -1,4 +1,10 @@
 package com.arcade.bootapplication2.Repository;
 
-public interface EmplRepository {
+
+import com.arcade.bootapplication2.Entity.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EmplRepository extends JpaRepository<Employee , Long> {
 }

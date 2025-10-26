@@ -1,4 +1,4 @@
-package com.arcade.bootapplication2.Controller;
+package com.arcade.bootapplication2.Exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
