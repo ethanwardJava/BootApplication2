@@ -6,6 +6,7 @@ import com.arcade.bootapplication2.Entity.Employee;
 import com.arcade.bootapplication2.Repository.EmplRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -21,6 +22,7 @@ import java.util.List;
 @Service
 public class EmplService implements EmployeeService {
     private final EmplRepository emplRepository;
+
     public EmplService(EmplRepository emplRepository) {
         this.emplRepository = emplRepository;
     }
@@ -53,8 +55,18 @@ public class EmplService implements EmployeeService {
      */
     @Override
     public List<Employee> findByName(String name) {
+        return emplRepository.findEmployeeByLastName(name);
+    }
 
-        return List.of();
+    @Override
+    public Employee add(Employee employee) {
+        return emplRepository.save(employee);
+    }
+
+    @Override
+    public String removeById(Long id) {
+        emplRepository.deleteById(id);
+        return "Employee with id " + id + " removed";
     }
 
 

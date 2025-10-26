@@ -10,4 +10,8 @@ public interface EmployeeService {
     List<Employee> findAll();
 
     List<Employee> findByName(String name);
+
+    Employee add(Employee employee);
+
+    String removeById(Long id);
 }
